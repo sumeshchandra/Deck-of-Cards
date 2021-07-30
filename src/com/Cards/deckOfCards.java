@@ -22,12 +22,14 @@ public class deckOfCards {
 		String[] ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace" };
 		
 		String arrayCard[][] = new String[4][13];
-		Set<String> cards = new HashSet<String>();
+//		Set<String> cards = new HashSet<String>();
 
 		// Create combination of cards
-		for (int i = 0; i < 4; i++) {
-			for (int j = 0; j < 13; j++) {
-				arrayCard[i][j] = suits[i] + ranks[j];
+		int n = suits.length * ranks.length;
+		String[] deck = new String[n];
+		for (int i = 0; i < ranks.length; i++) {
+			for (int j = 0; j < suits.length; j++) {
+				deck[suits.length * i + j] = ranks[i] + " " + suits[j];
 
 			}
 		}
